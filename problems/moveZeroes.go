@@ -52,3 +52,14 @@ func MoveZeroO2(nums []int)  {
 	}
 }
 
+func MoveZeroP2(nums []int)  {
+	lastZeroIndex := 0
+
+	for i, num := range nums {
+		if num != 0 {
+			nums[i],nums[lastZeroIndex] = nums[lastZeroIndex],nums[i]
+			lastZeroIndex ++
+		}
+	}
+}
+

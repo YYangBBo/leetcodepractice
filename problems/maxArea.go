@@ -47,6 +47,24 @@ func MaxAreaE1(heights []int) int {
 	return max
 }
 
+// MaxAreaP1 重复练习1
+func MaxAreaP1(heights []int) int {
+	max := 0
+	i, j := 0, len(heights)-1
+
+	for i < j {
+		if heights[i] > heights[j] {
+			max = getMaxInt(max, (j-i)*heights[j])
+			j--
+		} else {
+			max = getMaxInt(max, (j-i)*heights[i])
+			i++
+		}
+	}
+
+	return max
+}
+
 func getMaxInt(x, y int) int {
 	if x > y {
 		return x

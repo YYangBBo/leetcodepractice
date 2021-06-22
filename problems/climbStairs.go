@@ -12,3 +12,15 @@ func climbStairs(n int) int {
 	}
 	return r
 }
+
+
+func climbStairsP1(n int) int {
+	q,p,r := 0,0,1
+	for i := 1; i <= n; i++ {
+		p = q
+		q = r
+		r = p + q
+	}
+
+	return r
+}
