@@ -6,7 +6,7 @@ package problems
 // 还是使用双指针，但是需要区分偶节点
 // https://leetcode-cn.com/problems/swap-nodes-in-pairs/
 func swapPairsM1(head *ListNode) *ListNode {
-	var currNode *ListNode
+	// var currNode *ListNode
 
 	return nil
 }
