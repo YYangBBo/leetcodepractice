@@ -1,4 +1,4 @@
-package problems
+package array_list
 
 type ListNode struct {
 	Val  int
@@ -51,4 +51,19 @@ func reverseListE2(head *ListNode) *ListNode {
 	head.Next = nil
 	return newHead
 
+}
+
+
+func reverseListP1(head *ListNode) *ListNode {
+	var pre *ListNode
+	curr := head
+
+	for curr != nil {
+		 next := curr.Next
+		 curr.Next = pre
+		 pre = curr
+		 curr = next
+	}
+
+	return pre
 }

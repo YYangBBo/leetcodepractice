@@ -1,4 +1,4 @@
-package problems
+package array_list
 
 // 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 //
@@ -20,6 +20,19 @@ func climbStairsP1(n int) int {
 		p = q
 		q = r
 		r = p + q
+	}
+
+	return r
+}
+
+
+func climbStairsP2(n int) int {
+	p,q,r := 0,0,1
+
+	for i := 0; i < n; i++ {
+		p = q
+		q = r
+		r = p+q
 	}
 
 	return r
