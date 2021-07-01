@@ -10,7 +10,7 @@ type MinStack struct {
 }
 
 /** initialize your data structure here. */
-func Constructor() MinStack {
+func Constructor1() MinStack {
 	return MinStack{
 		buf:    make([]int, minCapacity, minCapacity),
 		head:   0,
