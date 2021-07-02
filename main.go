@@ -7,16 +7,11 @@ import (
 
 func main()  {
 
-	stack := stack_queue_deque.Constructor()
-	stack.Push(2)
-	stack.Push(0)
-	stack.Push(3)
-	stack.Push(0)
-	fmt.Println(stack.GetMin())
-	stack.Pop()
-	fmt.Println(stack.GetMin())
-	stack.Pop()
-	fmt.Println(stack.GetMin())
-	stack.Pop()
-	fmt.Println(stack.GetMin())
+	stack := stack_queue_deque.Constructor(3)
+	stack.InsertLast(1)
+	stack.InsertLast(2)
+	stack.InsertFront(3)
+	stack.InsertFront(4)
+	fmt.Println("getRear==>",stack.GetRear())
+
 }

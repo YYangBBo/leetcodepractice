@@ -1,109 +1,92 @@
 package stack_queue_deque
 
-type MyCircularDeque struct {
-	buf []int
+type MyCircularDequeE1 struct {
+	queue []int
 	head int
 	tail int
-	length int
-	capacity int
 }
 
 
-// https://leetcode-cn.com/problems/design-circular-deque/
 /** Initialize your data structure here. Set the size of the deque to be k. */
-func Constructor(k int) MyCircularDeque {
-	return MyCircularDeque{
-		buf:      make([]int,k,k),
-		tail:     -1,
-		length:   0,
-		capacity: k,
+func ConstructorE1(k int) MyCircularDequeE1 {
+	return MyCircularDequeE1{
+		queue: make([]int, k + 1),
+		head: 0,
+		tail: 0,
 	}
 }
 
 
 /** Adds an item at the front of Deque. Return true if the operation is successful. */
-func (this *MyCircularDeque) InsertFront(value int) bool {
+func (this *MyCircularDequeE1) InsertFront(value int) bool {
 	if this.IsFull() {
 		return false
 	}
-
-	newBuf := make([]int, this.capacity, this.capacity)
-	copy(newBuf[1:],this.buf[0:this.tail+1])
-	this.buf = newBuf
-	this.buf[0] = value
-	this.tail++
-	this.length++
+	this.head = (this.head - 1 + len(this.queue)) % len(this.queue)
+	this.queue[this.head] = value
 	return true
 }
 
 
 /** Adds an item at the rear of Deque. Return true if the operation is successful. */
-func (this *MyCircularDeque) InsertLast(value int) bool {
+func (this *MyCircularDequeE1) InsertLast(value int) bool {
 	if this.IsFull() {
 		return false
 	}
-
-	this.tail++
-	this.buf[this.tail] = value
-	this.length++
+	this.queue[this.tail] = value
+	this.tail = (this.tail + 1) % len(this.queue)
 	return true
 }
 
 
 /** Deletes an item from the front of Deque. Return true if the operation is successful. */
-func (this *MyCircularDeque) DeleteFront() bool {
-	if this.IsEmpty(){
+func (this *MyCircularDequeE1) DeleteFront() bool {
+	if this.IsEmpty() {
 		return false
 	}
-	newBuf := make([]int, this.capacity, this.capacity)
-	copy(newBuf[0:],this.buf[1:this.tail+1])
-	this.buf = newBuf
-	this.tail--
-	this.length--
+	this.head = (this.head + 1) % len(this.queue)
 	return true
 }
 
 
 /** Deletes an item from the rear of Deque. Return true if the operation is successful. */
-func (this *MyCircularDeque) DeleteLast() bool {
-	if this.IsEmpty(){
+func (this *MyCircularDequeE1) DeleteLast() bool {
+	if this.IsEmpty() {
 		return false
 	}
-	this.tail--
-	this.length--
+	this.tail = (this.tail - 1 + len(this.queue)) % len(this.queue)
 	return true
 }
 
 
 /** Get the front item from the deque. */
-func (this *MyCircularDeque) GetFront() int {
-	if this.tail == -1 {
+func (this *MyCircularDequeE1) GetFront() int {
+	if this.IsEmpty() {
 		return -1
 	}
-
-	return this.buf[0]
+	return this.queue[this.head]
 }
 
 
 /** Get the last item from the deque. */
-func (this *MyCircularDeque) GetRear() int {
-	if this.tail == -1 {
+func (this *MyCircularDequeE1) GetRear() int {
+	if this.IsEmpty() {
 		return -1
 	}
-
-	return this.buf[this.tail]
+	n := (this.tail - 1 + len(this.queue)) % len(this.queue)
+	return this.queue[n]
 }
 
 
 /** Checks whether the circular deque is empty or not. */
-func (this *MyCircularDeque) IsEmpty() bool {
-	return this.length == 0
+func (this *MyCircularDequeE1) IsEmpty() bool {
+	return this.head == this.tail
 }
 
 
 /** Checks whether the circular deque is full or not. */
-func (this *MyCircularDeque) IsFull() bool {
-	return this.length == this.capacity
+func (this *MyCircularDequeE1) IsFull() bool {
+	return (this.tail + 1) % len(this.queue) == this.head
 }
 
 
