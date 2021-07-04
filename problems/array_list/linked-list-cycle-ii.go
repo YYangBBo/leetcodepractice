@@ -22,15 +22,15 @@ func detectCycleE1(head *ListNode) *ListNode {
 		return nil
 	}
 
-	slow ,fast := head,head
+	slow, fast := head, head
 
 	for fast != nil && fast.Next != nil {
 		slow = slow.Next
 		fast = fast.Next.Next
 		if slow == fast {
-			p:= head
+			p := head
 			// 需要进行回退
-			for p != slow{
+			for p != slow {
 				p = p.Next
 				slow = slow.Next
 			}

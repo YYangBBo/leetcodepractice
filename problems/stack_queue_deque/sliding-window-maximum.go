@@ -5,6 +5,5 @@ package stack_queue_deque
 // https://leetcode-cn.com/problems/sliding-window-maximum
 func maxSlidingWindowM1(nums []int, k int) []int {
 
-
 	return nil
 }

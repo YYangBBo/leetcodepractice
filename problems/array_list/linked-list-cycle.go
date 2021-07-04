@@ -8,9 +8,9 @@ func hasCycleM1(head *ListNode) bool {
 	nodeMap := make(map[*ListNode]int)
 
 	for head != nil {
-		if _,exist := nodeMap[head];!exist{
+		if _, exist := nodeMap[head]; !exist {
 			nodeMap[head] = 1
-		}else {
+		} else {
 			return true
 		}
 

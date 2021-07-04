@@ -1,25 +1,23 @@
 package stack_queue_deque
 
 type MyCircularDeque struct {
-	buf []int
-	head int
-	tail int
-	length int
+	buf      []int
+	head     int
+	tail     int
+	length   int
 	capacity int
 }
-
 
 // https://leetcode-cn.com/problems/design-circular-deque/
 /** Initialize your data structure here. Set the size of the deque to be k. */
 func Constructor(k int) MyCircularDeque {
 	return MyCircularDeque{
-		buf:      make([]int,k,k),
+		buf:      make([]int, k, k),
 		tail:     -1,
 		length:   0,
 		capacity: k,
 	}
 }
-
 
 /** Adds an item at the front of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) InsertFront(value int) bool {
@@ -28,14 +26,13 @@ func (this *MyCircularDeque) InsertFront(value int) bool {
 	}
 
 	newBuf := make([]int, this.capacity, this.capacity)
-	copy(newBuf[1:],this.buf[0:this.tail+1])
+	copy(newBuf[1:], this.buf[0:this.tail+1])
 	this.buf = newBuf
 	this.buf[0] = value
 	this.tail++
 	this.length++
 	return true
 }
-
 
 /** Adds an item at the rear of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) InsertLast(value int) bool {
@@ -49,31 +46,28 @@ func (this *MyCircularDeque) InsertLast(value int) bool {
 	return true
 }
 
-
 /** Deletes an item from the front of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) DeleteFront() bool {
-	if this.IsEmpty(){
+	if this.IsEmpty() {
 		return false
 	}
 	newBuf := make([]int, this.capacity, this.capacity)
-	copy(newBuf[0:],this.buf[1:this.tail+1])
+	copy(newBuf[0:], this.buf[1:this.tail+1])
 	this.buf = newBuf
 	this.tail--
 	this.length--
 	return true
 }
 
-
 /** Deletes an item from the rear of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) DeleteLast() bool {
-	if this.IsEmpty(){
+	if this.IsEmpty() {
 		return false
 	}
 	this.tail--
 	this.length--
 	return true
 }
-
 
 /** Get the front item from the deque. */
 func (this *MyCircularDeque) GetFront() int {
@@ -84,7 +78,6 @@ func (this *MyCircularDeque) GetFront() int {
 	return this.buf[0]
 }
 
-
 /** Get the last item from the deque. */
 func (this *MyCircularDeque) GetRear() int {
 	if this.tail == -1 {
@@ -94,18 +87,15 @@ func (this *MyCircularDeque) GetRear() int {
 	return this.buf[this.tail]
 }
 
-
 /** Checks whether the circular deque is empty or not. */
 func (this *MyCircularDeque) IsEmpty() bool {
 	return this.length == 0
 }
 
-
 /** Checks whether the circular deque is full or not. */
 func (this *MyCircularDeque) IsFull() bool {
 	return this.length == this.capacity
 }
-
 
 /**
  * Your MyCircularDeque object will be instantiated and called as such:

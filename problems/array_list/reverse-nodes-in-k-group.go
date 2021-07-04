@@ -14,7 +14,7 @@ func reverseKGroupM1(head *ListNode, k int) *ListNode {
 		Next: head,
 	}
 	firstNode := headNode
-	var preNode,endNode *ListNode
+	var preNode, endNode *ListNode
 	for head != nil {
 		i := 0
 		for ; i < k && head != nil; i++ {
@@ -26,10 +26,10 @@ func reverseKGroupM1(head *ListNode, k int) *ListNode {
 		}
 
 		if i == k {
-			reverseNode(preNode,endNode)
+			reverseNode(preNode, endNode)
 			headNode.Next = endNode
 			headNode = preNode
-		}else {
+		} else {
 			headNode.Next = preNode
 		}
 	}
@@ -37,7 +37,7 @@ func reverseKGroupM1(head *ListNode, k int) *ListNode {
 	return firstNode.Next
 }
 
-func reverseNode(preNode,endNode *ListNode) {
+func reverseNode(preNode, endNode *ListNode) {
 	prev := endNode.Next
 	p := preNode
 	for prev != endNode {

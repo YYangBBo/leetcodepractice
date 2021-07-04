@@ -1,6 +1,5 @@
 package stack_queue_deque
 
-
 // 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
 //求在该柱状图中，能够勾勒出来的矩形的最大面积。
 // https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
@@ -8,17 +7,17 @@ func largestRectangleAreaM1(heights []int) int {
 	maxArea := 0
 	for i, height := range heights {
 		// 寻找当前元素的左右边界
-		left,right := i,i
+		left, right := i, i
 
-		for l := i; l >= 0 ; l-- {
-			if heights[l] < height{
+		for l := i; l >= 0; l-- {
+			if heights[l] < height {
 				break
 			}
 			left = l
 		}
 
-		for r := i; r < len(heights) ; r++ {
-			if heights[r] < height{
+		for r := i; r < len(heights); r++ {
+			if heights[r] < height {
 				break
 			}
 			right = r
@@ -55,7 +54,7 @@ func largestRectangleAreaE1(heights []int) int {
 	}
 	ans := 0
 	for i := 0; i < n; i++ {
-		ans = max(ans, (right[i] - left[i] - 1) * heights[i])
+		ans = max(ans, (right[i]-left[i]-1)*heights[i])
 	}
 	return ans
 }

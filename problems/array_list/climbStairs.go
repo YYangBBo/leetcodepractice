@@ -13,9 +13,8 @@ func climbStairs(n int) int {
 	return r
 }
 
-
 func climbStairsP1(n int) int {
-	q,p,r := 0,0,1
+	q, p, r := 0, 0, 1
 	for i := 1; i <= n; i++ {
 		p = q
 		q = r
@@ -25,14 +24,13 @@ func climbStairsP1(n int) int {
 	return r
 }
 
-
 func climbStairsP2(n int) int {
-	p,q,r := 0,0,1
+	p, q, r := 0, 0, 1
 
 	for i := 0; i < n; i++ {
 		p = q
 		q = r
-		r = p+q
+		r = p + q
 	}
 
 	return r

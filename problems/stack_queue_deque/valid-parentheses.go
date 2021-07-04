@@ -11,16 +11,14 @@ func isValid(s string) bool {
 	deque := New(len(sBytes))
 
 	for _, sByte := range sBytes {
-		if pairsValue,exist := pairs[sByte];exist && deque.Len()>0 {
-			if pairsValue != deque.PopBack().(byte){
+		if pairsValue, exist := pairs[sByte]; exist && deque.Len() > 0 {
+			if pairsValue != deque.PopBack().(byte) {
 				return false
 			}
-		}else {
+		} else {
 			deque.PushBack(sByte)
 		}
 	}
 
-	return true && deque.Len()==0
+	return true && deque.Len() == 0
 }
-
-

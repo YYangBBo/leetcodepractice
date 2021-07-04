@@ -43,7 +43,6 @@ func ThreeSumE1(nums []int) [][]int {
 			continue
 		}
 
-
 		i, j := k+1, len(nums)-1
 		for i < j {
 			sum := nums[i] + nums[j] + nums[k]

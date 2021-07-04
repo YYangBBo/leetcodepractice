@@ -5,13 +5,13 @@ package array_list
 //你可以按任意顺序返回答案。
 // https://leetcode-cn.com/problems/two-sum/
 func twoSumE1(nums []int, target int) []int {
-		hashTable := map[int]int{}
-		for i, x := range nums {
+	hashTable := map[int]int{}
+	for i, x := range nums {
 		if p, ok := hashTable[target-x]; ok {
-		return []int{p, i}
-	}
+			return []int{p, i}
+		}
 		hashTable[x] = i
 	}
-		return nil
+	return nil
 
 }

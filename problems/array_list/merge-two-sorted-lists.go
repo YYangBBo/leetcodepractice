@@ -1,4 +1,5 @@
 package array_list
+
 // 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 // https://leetcode-cn.com/problems/merge-two-sorted-lists/
 func mergeTwoListsM1(l1 *ListNode, l2 *ListNode) *ListNode {
@@ -20,7 +21,7 @@ func mergeTwoListsM1(l1 *ListNode, l2 *ListNode) *ListNode {
 		if l1 == nil || (l2 != nil && l1.Val > l2.Val) {
 			curr.Next = l2
 			l2 = l2.Next
-		}	else {
+		} else {
 			curr.Next = l1
 			l1 = l1.Next
 		}
@@ -29,7 +30,6 @@ func mergeTwoListsM1(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	return head.Next
 }
-
 
 func mergeTwoListsE1(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {

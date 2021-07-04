@@ -31,9 +31,9 @@ func MoveZeroesO1(nums []int) {
 	for i, num := range nums {
 		if num != 0 {
 			nums[lastZeroIndex] = nums[i]
-			lastZeroIndex ++
+			lastZeroIndex++
 		}
- 	}
+	}
 
 	for i := lastZeroIndex; i < len(nums); i++ {
 		nums[i] = 0
@@ -42,24 +42,23 @@ func MoveZeroesO1(nums []int) {
 
 // MoveZeroesO2 优化方法2
 //
-func MoveZeroO2(nums []int)  {
+func MoveZeroO2(nums []int) {
 	lastZeroIndex := 0
 	for i, num := range nums {
 		if num != 0 {
-			nums[i],nums[lastZeroIndex] = nums[lastZeroIndex],nums[i]
-			lastZeroIndex ++
+			nums[i], nums[lastZeroIndex] = nums[lastZeroIndex], nums[i]
+			lastZeroIndex++
 		}
 	}
 }
 
-func MoveZeroP2(nums []int)  {
+func MoveZeroP2(nums []int) {
 	lastZeroIndex := 0
 
 	for i, num := range nums {
 		if num != 0 {
-			nums[i],nums[lastZeroIndex] = nums[lastZeroIndex],nums[i]
-			lastZeroIndex ++
+			nums[i], nums[lastZeroIndex] = nums[lastZeroIndex], nums[i]
+			lastZeroIndex++
 		}
 	}
 }
-

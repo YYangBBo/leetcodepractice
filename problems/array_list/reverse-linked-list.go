@@ -53,16 +53,15 @@ func reverseListE2(head *ListNode) *ListNode {
 
 }
 
-
 func reverseListP1(head *ListNode) *ListNode {
 	var pre *ListNode
 	curr := head
 
 	for curr != nil {
-		 next := curr.Next
-		 curr.Next = pre
-		 pre = curr
-		 curr = next
+		next := curr.Next
+		curr.Next = pre
+		pre = curr
+		curr = next
 	}
 
 	return pre
