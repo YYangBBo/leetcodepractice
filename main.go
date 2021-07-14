@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"leetcodepractice/problems/recursion"
+	"leetcodepractice/problems/greedy"
 )
 
 func main() {
-	fmt.Println(recursion.ClimbStairsP1(44))
+	greedy.LemonadeChange([]int{5,5,5,10,20})
 }
