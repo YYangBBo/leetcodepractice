@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"leetcodepractice/problems/binary_search"
+)
+
 func main() {
-	// greedy.RobotSim([]int{4,-1,4,-2,4},[][]int{{2, 4}})
+	fmt.Println(binary_search.Search([]int{5,1,3},3))
 }
