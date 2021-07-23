@@ -1,22 +1,23 @@
 package dynamic_planning
 
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
-	m,n := len(obstacleGrid),len(obstacleGrid[0])
-	dp := make([]int,len(obstacleGrid[0]))
-
-	for i := range dp {
-		dp[i] = 1
+	m, n := len(obstacleGrid), len(obstacleGrid[0])
+	f := make([]int, n)
+	if obstacleGrid[0][0] == 0 {
+		f[0] = 1
 	}
 
-	for i := 1; i < m; i++ {
-		for j := 1; j < n; j++ {
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
 			if obstacleGrid[i][j] == 1 {
+				f[j] = 0
 				continue
 			}
-
-			dp[j] += dp[j-1]
+			if j-1 >= 0 {
+				f[j] += f[j-1]
+			}
 		}
 	}
+	return f[n-1]
 
-	return dp[n-1]
 }
