@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"leetcodepractice/problems/binary_search"
-)
-
 func main() {
-	fmt.Println(binary_search.Search([]int{5,1,3},3))
+	// dynamic_planning.CoinChange([]int{186,419,83,408},6249)
 }
