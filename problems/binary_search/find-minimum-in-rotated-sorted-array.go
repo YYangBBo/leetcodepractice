@@ -7,9 +7,9 @@ package binary_search
 //给你一个元素值 互不相同 的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
 //链接：https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array
 func findMin(nums []int) int {
-	left, right := 0, len(nums) - 1
+	left, right := 0, len(nums)-1
 	for left < right {
-		mid := left + (right-left) / 2
+		mid := left + (right-left)/2
 		if nums[mid] < nums[right] {
 			right = mid
 		} else {

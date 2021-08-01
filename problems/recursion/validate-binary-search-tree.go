@@ -18,9 +18,9 @@ func isValidBST(root *TreeNode) bool {
 
 	var isValidBSTSub func(node *TreeNode)
 	isValidBSTSub = func(node *TreeNode) {
-		if node != nil && isValid == true{
+		if node != nil && isValid == true {
 			if (node.Left != nil && node.Val <= node.Left.Val) ||
-				(node.Right != nil && node.Val >= node.Right.Val ){
+				(node.Right != nil && node.Val >= node.Right.Val) {
 				isValid = false
 			}
 			isValidBSTSub(node.Left)

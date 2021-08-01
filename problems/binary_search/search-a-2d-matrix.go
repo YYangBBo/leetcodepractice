@@ -9,19 +9,19 @@ func searchMatrix(matrix [][]int, target int) bool {
 		return false
 	}
 
-	m,n := len(matrix),len(matrix[0])
-	left, right := 0,m*n-1
+	m, n := len(matrix), len(matrix[0])
+	left, right := 0, m*n-1
 
 	for left <= right {
-		mid := left + (right - left)/2
+		mid := left + (right-left)/2
 
 		if matrix[mid/n][mid%n] == target {
 			return true
 		}
 
-		if target < matrix[mid/n][mid%n]{
+		if target < matrix[mid/n][mid%n] {
 			right = mid - 1
-		}else {
+		} else {
 			left = mid + 1
 		}
 	}

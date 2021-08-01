@@ -27,8 +27,11 @@ func kWeakestRows(mat [][]int, k int) []int {
 type pair struct{ pow, idx int }
 type hp []pair
 
-func (h hp) Len() int            { return len(h) }
-func (h hp) Less(i, j int) bool  { a, b := h[i], h[j]; return a.pow < b.pow || a.pow == b.pow && a.idx < b.idx }
+func (h hp) Len() int { return len(h) }
+func (h hp) Less(i, j int) bool {
+	a, b := h[i], h[j]
+	return a.pow < b.pow || a.pow == b.pow && a.idx < b.idx
+}
 func (h hp) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
 func (h *hp) Push(v interface{}) { *h = append(*h, v.(pair)) }
 func (h *hp) Pop() interface{}   { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; return v }

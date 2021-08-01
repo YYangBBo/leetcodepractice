@@ -9,10 +9,10 @@ func findContentChildren(g []int, s []int) int {
 	sort.Ints(s)
 	sort.Ints(g)
 
-	currS := len(s)-1
+	currS := len(s) - 1
 	ans := 0
-	for i := len(g)-1; i >= 0 && currS >= 0; i-- {
-		if g[i]<= s[currS] {
+	for i := len(g) - 1; i >= 0 && currS >= 0; i-- {
+		if g[i] <= s[currS] {
 			ans++
 			currS--
 		}

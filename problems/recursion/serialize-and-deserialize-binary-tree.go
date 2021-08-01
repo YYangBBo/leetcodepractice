@@ -10,7 +10,6 @@ import (
 //提示: 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
 // https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
 type Codec struct {
-
 }
 
 func Constructor() Codec {
@@ -19,7 +18,7 @@ func Constructor() Codec {
 
 // Serializes a tree to a single string.
 func (this *Codec) serialize(root *TreeNode) string {
-	datas := make([]string,0)
+	datas := make([]string, 0)
 
 	var serializeSub func(node *TreeNode)
 	serializeSub = func(node *TreeNode) {
@@ -27,14 +26,14 @@ func (this *Codec) serialize(root *TreeNode) string {
 			datas = append(datas, strconv.Itoa(node.Val))
 			serializeSub(node.Left)
 			serializeSub(node.Right)
-		}else {
+		} else {
 			datas = append(datas, "null")
 		}
 	}
 
 	serializeSub(root)
 
-	return strings.Join(datas,",")
+	return strings.Join(datas, ",")
 }
 
 // Deserializes your encoded data to tree.

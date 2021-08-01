@@ -15,7 +15,7 @@ func Constructor() CQueue {
 	}
 }
 
-func (this *CQueue) AppendTail(value int)  {
+func (this *CQueue) AppendTail(value int) {
 	this.stack1.PushBack(value)
 }
 

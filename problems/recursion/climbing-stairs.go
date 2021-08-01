@@ -8,18 +8,18 @@ func ClimbStairs(n int) int {
 }
 
 func climbStairsSub(n int) int {
-	if n == 1{
+	if n == 1 {
 		return 1
 	}
 	if n == 2 {
 		return 2
 	}
 
-	return  climbStairsSub(n-1) + climbStairsSub(n-2)
+	return climbStairsSub(n-1) + climbStairsSub(n-2)
 }
 
 func ClimbStairsP1(n int) int {
-	r,p,q := 0,0,1
+	r, p, q := 0, 0, 1
 
 	for i := 0; i <= n; i++ {
 		p = q

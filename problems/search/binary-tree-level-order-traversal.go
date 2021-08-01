@@ -34,7 +34,7 @@ func levelOrderE1(root *TreeNode) [][]int {
 
 // DFS
 func levelOrderM1(root *TreeNode) [][]int {
-	ans := make([][]int,0)
+	ans := make([][]int, 0)
 
 	var dfs func(node *TreeNode, level int)
 	dfs = func(node *TreeNode, level int) {
@@ -42,15 +42,15 @@ func levelOrderM1(root *TreeNode) [][]int {
 			return
 		}
 
-		if len(ans)<=level{
-			ans = append(ans, make([]int,0))
+		if len(ans) <= level {
+			ans = append(ans, make([]int, 0))
 		}
 		ans[level] = append(ans[level], node.Val)
 
 		dfs(node.Left, level+1)
 		dfs(node.Right, level+1)
 	}
-	dfs(root,0)
+	dfs(root, 0)
 
 	return ans
 }

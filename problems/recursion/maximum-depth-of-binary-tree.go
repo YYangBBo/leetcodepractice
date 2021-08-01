@@ -7,19 +7,19 @@ package recursion
 func maxDepth(root *TreeNode) int {
 	max := 0
 
-	var maxDepthSub func(node *TreeNode,depth int)
-	maxDepthSub = func(node *TreeNode,depth int) {
+	var maxDepthSub func(node *TreeNode, depth int)
+	maxDepthSub = func(node *TreeNode, depth int) {
 		if depth > max {
 			max = depth
 		}
 
 		if node != nil {
-			maxDepthSub(node.Left,depth+1)
-			maxDepthSub(node.Right,depth+1)
+			maxDepthSub(node.Left, depth+1)
+			maxDepthSub(node.Right, depth+1)
 		}
 	}
 
-	maxDepthSub(root,0)
+	maxDepthSub(root, 0)
 
 	return max
 }

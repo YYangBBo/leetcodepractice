@@ -1,6 +1,5 @@
 package recursion
 
-
 // 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 // https://leetcode-cn.com/problems/combinations/
 func combineE1(n int, k int) (ans [][]int) {
@@ -8,7 +7,7 @@ func combineE1(n int, k int) (ans [][]int) {
 	var dfs func(int)
 	dfs = func(cur int) {
 		// 剪枝：temp 长度加上区间 [cur, n] 的长度小于 k，不可能构造出长度为 k 的 temp
-		if len(temp) + (n - cur + 1) < k {
+		if len(temp)+(n-cur+1) < k {
 			return
 		}
 		// 记录合法的答案

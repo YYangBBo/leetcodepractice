@@ -8,7 +8,7 @@ func minimumTotal(triangle [][]int) int {
 
 	for i := len(triangle) - 1; i >= 0; i-- {
 		for j := 0; j < len(triangle[i]); j++ {
-			a[j] = min(a[j],a[j+1]) + triangle[i][j]
+			a[j] = min(a[j], a[j+1]) + triangle[i][j]
 		}
 	}
 

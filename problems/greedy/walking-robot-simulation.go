@@ -48,7 +48,7 @@ func robotSimM1(commands []int, obstacles [][]int) int {
 			}
 		}
 
-		if ans < x*x + y*y{
+		if ans < x*x+y*y {
 			ans = x*x + y*y
 		}
 	}
@@ -80,7 +80,6 @@ func isObstacles(x, y, d int, obstacles [][]int) bool {
 
 	return false
 }
-
 
 func robotSimE1(commands []int, obstacles [][]int) int {
 	//把所有障碍物都存储起来 便于访问的时候复杂度是O1

@@ -23,7 +23,7 @@ func maxProfit(prices []int) int {
 		}
 
 		// 如果到最后还没卖
-		if i == len(prices) -2 && isBuy{
+		if i == len(prices)-2 && isBuy {
 			isBuy = false
 			profit += prices[i+1] - prices[buyIndex]
 		}

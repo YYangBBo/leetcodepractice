@@ -26,7 +26,7 @@ func mySqrt(x int) int {
 func mySqrtE1(x int) int {
 	r := x
 	for r*r > x {
-		r = (r + x/r) /2
+		r = (r + x/r) / 2
 	}
 
 	return r

@@ -1,4 +1,5 @@
 package devide_recall
+
 // n皇后问题 研究的是如何将 n个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
 //
 //给你一个整数 n ，返回所有不同的n皇后问题 的解决方案。
@@ -40,7 +41,7 @@ func backtrack(queens []int, n, row int, columns, diagonals1, diagonals2 map[int
 		queens[row] = i
 		columns[i] = true
 		diagonals1[diagonal1], diagonals2[diagonal2] = true, true
-		backtrack(queens, n, row + 1, columns, diagonals1, diagonals2)
+		backtrack(queens, n, row+1, columns, diagonals1, diagonals2)
 		queens[row] = -1
 		delete(columns, i)
 		delete(diagonals1, diagonal1)

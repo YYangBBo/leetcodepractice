@@ -23,7 +23,7 @@ func updateBoard(board [][]byte, click []int) [][]byte {
 func dfsBoard(board [][]byte, x, y int) {
 	cnt := 0
 	for i := 0; i < 8; i++ {
-		tx, ty := x + dirX[i], y + dirY[i]
+		tx, ty := x+dirX[i], y+dirY[i]
 		if tx < 0 || tx >= len(board) || ty < 0 || ty >= len(board[0]) {
 			continue
 		}
@@ -37,7 +37,7 @@ func dfsBoard(board [][]byte, x, y int) {
 	} else {
 		board[x][y] = 'B'
 		for i := 0; i < 8; i++ {
-			tx, ty := x + dirX[i], y + dirY[i]
+			tx, ty := x+dirX[i], y+dirY[i]
 			// 这里不需要在存在 B 的时候继续扩展，因为 B 之前被点击的时候已经被扩展过了
 			if tx < 0 || tx >= len(board) || ty < 0 || ty >= len(board[0]) || board[tx][ty] != 'E' {
 				continue

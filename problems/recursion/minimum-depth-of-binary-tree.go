@@ -16,17 +16,17 @@ func minDepth(root *TreeNode) int {
 	}
 
 	min := math.MaxInt16
-	var minDepthSub func(node *TreeNode,depth int)
-	minDepthSub = func(node *TreeNode,depth int) {
+	var minDepthSub func(node *TreeNode, depth int)
+	minDepthSub = func(node *TreeNode, depth int) {
 		if node != nil {
 			if node.Left == nil && node.Right == nil && depth < min {
 				min = depth
 			}
-			minDepthSub(node.Left,depth+1)
-			minDepthSub(node.Right,depth+1)
+			minDepthSub(node.Left, depth+1)
+			minDepthSub(node.Right, depth+1)
 		}
 	}
-	minDepthSub(root,1)
+	minDepthSub(root, 1)
 
 	return min
 }

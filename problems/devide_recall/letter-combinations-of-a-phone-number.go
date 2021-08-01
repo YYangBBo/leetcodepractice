@@ -1,4 +1,5 @@
 package devide_recall
+
 var phoneMap map[string]string = map[string]string{
 	"2": "abc",
 	"3": "def",
@@ -9,16 +10,17 @@ var phoneMap map[string]string = map[string]string{
 	"8": "tuv",
 	"9": "wxyz",
 }
+
 func letterCombinations(digits string) []string {
-	letter := make([]string,0)
+	letter := make([]string, 0)
 	for _, digit := range digits {
 		letter = append(letter, phoneMap[string(digit)])
 	}
 
-	ans := make([]string,0)
+	ans := make([]string, 0)
 	nums := len(letter)
 
-	var combineSub func(s []byte,cur int)
+	var combineSub func(s []byte, cur int)
 	combineSub = func(s []byte, cur int) {
 		if cur == nums {
 			ans = append(ans, string(s))
@@ -26,16 +28,15 @@ func letterCombinations(digits string) []string {
 		}
 
 		s = append(s, s[cur])
-		combineSub(s,cur+1)
+		combineSub(s, cur+1)
 
 		s = s[:len(s)-1]
-		combineSub(s,cur+1)
+		combineSub(s, cur+1)
 	}
-	combineSub(make([]byte,0),0)
+	combineSub(make([]byte, 0), 0)
 
 	return ans
 }
-
 
 var combinations []string
 
@@ -56,7 +57,7 @@ func backtrack1(digits string, index int, combination string) {
 		letters := phoneMap[digit]
 		lettersCount := len(letters)
 		for i := 0; i < lettersCount; i++ {
-			backtrack1(digits, index + 1, combination + string(letters[i]))
+			backtrack1(digits, index+1, combination+string(letters[i]))
 		}
 	}
 }
