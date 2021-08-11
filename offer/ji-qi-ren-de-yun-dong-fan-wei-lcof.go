@@ -7,10 +7,11 @@ package offer
 //链接：https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof
 func movingCount(m int, n int, k int) int {
 
-	var dfs func(m int, n int, k int)
-	dfs = func(m int, n int, k int) bool {
-
-	}
+	//var dfs func(m int, n int, k int)
+	//dfs = func(m int, n int, k int) bool {
+	//
+	//}
+	return 0
 }
 
 func get(x int) int {
