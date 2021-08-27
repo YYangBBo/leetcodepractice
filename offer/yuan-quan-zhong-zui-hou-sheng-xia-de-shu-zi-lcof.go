@@ -5,7 +5,9 @@ package offer
 //
 //链接：https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof
 func lastRemaining(n int, m int) int {
-
-
-	return 0
+	idx := 0
+	for i:=2; i<=n; i++ {
+		idx = (idx+m)%i
+	}
+	return idx
 }
