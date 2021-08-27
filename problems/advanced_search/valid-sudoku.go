@@ -12,7 +12,7 @@ package advanced_search
 //只需要根据以上规则，验证已经填入的数字是否有效即可。
 //链接：https://leetcode-cn.com/problems/valid-sudoku
 func isValidSudoku(board [][]byte) bool {
-
+	
 
 	return false
 }
