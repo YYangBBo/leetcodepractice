@@ -1,6 +1,8 @@
 package sort
 
-import "math/rand"
+import (
+	"math/rand"
+)
 
 func quickSort(items []int) []int {
 	if len(items) < 2  {
