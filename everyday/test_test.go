@@ -12,3 +12,7 @@ func TestSlice1(t *testing.T) {
 	s1[3] = 30
 	fmt.Println(s1[3], s2[3])
 }
+
+func TestConstruct(t *testing.T)  {
+	constructRectangle(15)
+}
